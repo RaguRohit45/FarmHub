@@ -2,7 +2,7 @@ import { memo, useEffect, useMemo, useState } from 'react';
 import NavbarHome from './NavbarHome';
 
 const AllVideos = () => {
-  const API_BASE = useMemo(() => 'http://localhost:5050/api', []);
+  const API_BASE = useMemo(() => 'https://farmhub-tnfz.onrender.com/api', []);
   const token = useMemo(() => localStorage.getItem('token'), []);
 
   const [videos, setVideos] = useState([]);
@@ -134,7 +134,7 @@ const AllVideos = () => {
                     </div>
                     <p className="card-text text-muted mb-2">{vid.description}</p>
                     <div className="ratio ratio-16x9 mb-2">
-                      <video src={`http://localhost:5050${vid.filePath}`} controls className="w-100" />
+                      <video src={`https://farmhub-tnfz.onrender.com${vid.filePath}`} controls className="w-100" />
                     </div>
                     <div className="mt-auto">
                       <button className="btn btn-outline-secondary btn-sm" onClick={() => toggleComments(vid._id)}>

@@ -2,7 +2,7 @@ import { memo, useEffect, useMemo, useRef, useState } from 'react';
 import NavbarHome from './NavbarHome';
 
 const Ask = () => {
-  const API_BASE = useMemo(() => 'http://localhost:5050/api', []);
+  const API_BASE = useMemo(() => 'https://farmhub-tnfz.onrender.com/api', []);
   const token = useMemo(() => localStorage.getItem('token'), []);
 
   const [messages, setMessages] = useState([]);

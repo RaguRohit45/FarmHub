@@ -11,7 +11,7 @@ const UserLogin = () => {
         e.preventDefault();
         try {
             const password = String(pass);
-            const res = await axios.post('http://localhost:5050/api/user/login', { email, password });
+            const res = await axios.post('https://farmhub-tnfz.onrender.com/api/user/login', { email, password });
             if (window.Swal) {
                 await Swal.fire({ icon: 'success', title: 'Logged in', text: 'User logged in successfully' });
             }

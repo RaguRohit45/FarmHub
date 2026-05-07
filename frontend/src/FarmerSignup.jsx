@@ -21,7 +21,7 @@ const FarmerSignup = () => {
         return;
       }
       const fpassword = String(fpass);
-      const res = await axios.post('http://localhost:5050/api/farmer/signup', { fname, femail, fpassword });
+      const res = await axios.post('https://farmhub-tnfz.onrender.com/api/farmer/signup', { fname, femail, fpassword });
       if (window.Swal) {
         await Swal.fire({ icon: 'success', title: 'Signed up', text: 'Farmer signed up successfully' });
       }

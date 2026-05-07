@@ -12,7 +12,7 @@ const FarmerLogin = () => {
         try {
             e.preventDefault();
             const fpassword = String(password);
-            const res = await axios.post('http://localhost:5050/api/farmer/login', { femail, fpassword });
+            const res = await axios.post('https://farmhub-tnfz.onrender.com/api/farmer/login', { femail, fpassword });
             if (window.Swal) {
                 await Swal.fire({ icon: 'success', title: 'Logged in', text: 'Farmer logged in successfully' });
             }
