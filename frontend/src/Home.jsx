@@ -95,7 +95,7 @@ const Home = () => {
                 <div className="p-4 p-md-5 bg-success text-white rounded-3">
                     <div className="d-lg-flex align-items-center justify-content-between gap-3">
                         <div>
-                            <h3 className="mb-2">Have a farming question?</h3>
+                              <h3 className="mb-2">Have a farming question?</h3>
                             <p className="mb-0">Ask the community and get answers from experienced farmers within hours.</p>
                         </div>
                         <Link to="/ask" className="btn btn-light text-success fw-semibold px-4 mt-3 mt-lg-0">Ask a Doubt</Link>
