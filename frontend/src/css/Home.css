@@ -1,0 +1,38 @@
+.home-page {
+  padding-top: 80px;
+}
+
+.hero-section {
+  background: linear-gradient(rgba(0, 0, 0, 0.45), rgba(0, 0, 0, 0.45)),
+    url('https://images.unsplash.com/photo-1500382017468-9049fed747ef?q=80&w=1600&auto=format&fit=crop') center/cover no-repeat;
+  color: #fff;
+  border-radius: 16px;
+}
+
+.hero-section .lead {
+  max-width: 720px;
+}
+
+.feature-icon {
+  width: 48px;
+  height: 48px;
+  border-radius: 10px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.card-hover:hover {
+  transform: translateY(-4px);
+  transition: transform 0.2s ease;
+}
+
+.gallery img {
+  border-radius: 12px;
+  object-fit: cover;
+  height: 220px;
+}
+
+.section-title {
+  font-weight: 700;
+}

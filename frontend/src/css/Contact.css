@@ -1,0 +1,11 @@
+.contact-page{
+  padding-top: 80px; 
+}
+
+.pt-fixed{ 
+  padding-top: 80px;
+}
+
+.contact-page .card{
+  border-radius: 12px;
+}

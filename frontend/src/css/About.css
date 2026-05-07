@@ -1,0 +1,40 @@
+.about-page {
+  padding-top: 80px; 
+}
+
+.about-hero {
+  background: linear-gradient(180deg, #e8f5e9, #ffffff);
+  border-radius: 16px;
+}
+
+.section-title {
+  font-weight: 700;
+}
+
+.timeline {
+  position: relative;
+  padding-left: 24px;
+}
+.timeline::before {
+  content: "";
+  position: absolute;
+  left: 8px;
+  top: 0;
+  bottom: 0;
+  width: 2px;
+  background: #19875433;
+}
+.timeline-item {
+  position: relative;
+  margin-bottom: 16px;
+}
+.timeline-item::before {
+  content: "";
+  position: absolute;
+  left: -2px;
+  top: 6px;
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: #198754;
+}

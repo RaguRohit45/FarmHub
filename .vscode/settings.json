@@ -1,0 +1,12 @@
+{
+  "json.schemas": [
+    {
+      "fileMatch": [
+        "/backend/package.json",
+        "/frontend/package.json"
+      ],
+      "url": "vscode://schemas/npm-package"
+    }
+  ],
+  "json.schemaDownload.enable": false
+}

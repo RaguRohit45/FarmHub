@@ -1,0 +1,17 @@
+.nav-link:hover{
+    color: #fff;
+}
+.nav-link{
+    font-size: 16px;
+    color: rgb(191, 202, 202);
+}
+.navbar-brand{
+    font-size: 24px;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+}
+.single{
+    font-size: 25px;
+    color: rgb(103, 199, 7);
+    font-weight: 200;
+}
+
