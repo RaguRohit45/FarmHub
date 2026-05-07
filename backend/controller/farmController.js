@@ -69,7 +69,7 @@ const getUserProfile = async (req, res) => {
 
 const updateUserProfile = async (req, res) => {
     try {
-        const { name, phone, address } = req.body;
+        const { name, phone, dateOfBirth, gender, occupation } = req.body;
         const user = await User.findById(req.user.id);
         
         if (!user) {
@@ -78,7 +78,9 @@ const updateUserProfile = async (req, res) => {
 
         if (name) user.name = name;
         if (phone !== undefined) user.phone = phone;
-        if (address !== undefined) user.address = address;
+        if (dateOfBirth !== undefined) user.dateOfBirth = dateOfBirth;
+        if (gender !== undefined) user.gender = gender;
+        if (occupation !== undefined) user.occupation = occupation;
 
         await user.save();
 
