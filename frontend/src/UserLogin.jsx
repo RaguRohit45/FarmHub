@@ -19,6 +19,9 @@ const UserLogin = () => {
             if (res?.data?.user?.name) {
                 localStorage.setItem("userName", res.data.user.name);
             }
+            if (res?.data?.user?.email) {
+                localStorage.setItem("userEmail", res.data.user.email);
+            }
             window.dispatchEvent(new Event('auth-changed'));
             console.log('token saved');
             navigate('/');

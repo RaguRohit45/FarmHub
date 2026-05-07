@@ -13,6 +13,7 @@ import Ask from "./Ask";
 import Privacy from "./Privacy";
 import Terms from "./Terms";
 import AskFarmer from "./AskFarmer";
+import Profile from "./Profile";
 
 const RequireAuth = ({ children }) => {
   const token = localStorage.getItem("token");
@@ -40,6 +41,7 @@ function App() {
         <Route path="/privacy" element={<Privacy />} />
         <Route path="/terms" element={<Terms />} />
         <Route path="/askfarmer" element={<RequireAuth><AskFarmer /></RequireAuth>} />
+        <Route path="/profile" element={<RequireAuth><Profile /></RequireAuth>} />
       </Routes>
     </Router>
   );

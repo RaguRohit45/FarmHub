@@ -109,6 +109,12 @@ const NavbarHome = () => {
                 </button>
                 <ul className="dropdown-menu dropdown-menu-end" aria-labelledby="userMenu">
                   <li>
+                    <Link className="dropdown-item" to="/profile">
+                      <i className="bi bi-person me-2"></i>Profile
+                    </Link>
+                  </li>
+                  <li><hr className="dropdown-divider" /></li>
+                  <li>
                     <button className="dropdown-item" onClick={handleLogout}>
                       <i className="bi bi-box-arrow-right me-2"></i>Logout
                     </button>

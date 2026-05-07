@@ -24,5 +24,7 @@ router.delete('/videos/:id', verifyToken, videoController.deleteVideo);
 router.get('/chat', verifyToken, chatController.getMessages);
 router.post('/chat', verifyToken, chatController.postMessage);
 router.post('/chat/:id/replies', verifyToken, chatController.postReply);
+router.get('/user/profile', verifyToken, userController.getUserProfile);
+router.put('/user/profile', verifyToken, userController.updateUserProfile);
 
 module.exports = router;

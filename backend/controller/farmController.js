@@ -55,4 +55,41 @@ const loginFarmer = async (req, res) => {
     }
 }
 
-module.exports = { signupUser, signupFarmer, loginUser, loginFarmer };
+const getUserProfile = async (req, res) => {
+    try {
+        const user = await User.findById(req.user.id).select('-password');
+        if (!user) {
+            return res.status(404).json({ message: 'User not found' });
+        }
+        res.status(200).json({ user });
+    } catch (error) {
+        res.status(500).json({ message: 'Error fetching profile', error });
+    }
+};
+
+const updateUserProfile = async (req, res) => {
+    try {
+        const { name, phone, address } = req.body;
+        const user = await User.findById(req.user.id);
+        
+        if (!user) {
+            return res.status(404).json({ message: 'User not found' });
+        }
+
+        if (name) user.name = name;
+        if (phone !== undefined) user.phone = phone;
+        if (address !== undefined) user.address = address;
+
+        await user.save();
+
+        const updatedUser = await User.findById(req.user.id).select('-password');
+        res.status(200).json({ 
+            message: 'Profile updated successfully', 
+            user: updatedUser 
+        });
+    } catch (error) {
+        res.status(500).json({ message: 'Error updating profile', error });
+    }
+};
+
+module.exports = { signupUser, signupFarmer, loginUser, loginFarmer, getUserProfile, updateUserProfile };
