@@ -20,7 +20,7 @@ app.use('/uploads', express.static(path.join(__dirname, 'uploads')));
 app.use(parser.json());
 const allowedOrigins = [
   "http://localhost:5173",   // React dev server
-  "http://10.56.9.4:5173" // Production frontend
+  "https://farmhub-uldd.onrender.com" // Production frontend
 ];
 
 app.use(

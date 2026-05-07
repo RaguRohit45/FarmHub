@@ -37,6 +37,15 @@ const NavbarFarmer = () => {
     setToken(null);
     setUserName(null);
     window.dispatchEvent(new Event("auth-changed"));
+    
+    await Swal.fire({
+      icon: 'success',
+      title: 'Logged Out',
+      text: 'You have been successfully logged out',
+      timer: 2000,
+      showConfirmButton: false
+    });
+    
     navigate("/");
   };
 

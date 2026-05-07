@@ -21,14 +21,31 @@ const NavbarHome = () => {
     };
   }, []);
 
-  const handleLogout = () => {
-    if (window.confirm('Are you sure you want to log out?')) {
-      localStorage.removeItem('token');
-      localStorage.removeItem('userName');
-      setToken(null);
-      setUserName(null);
-      navigate('/');
-    }
+  const handleLogout = async () => {
+    const result = await Swal.fire({
+      icon: 'warning',
+      title: 'Logout?',
+      text: 'Are you sure you want to log out?',
+      showCancelButton: true,
+      confirmButtonText: 'Yes, logout',
+      cancelButtonText: 'Cancel'
+    });
+    if (!result.isConfirmed) return;
+    
+    localStorage.removeItem('token');
+    localStorage.removeItem('userName');
+    setToken(null);
+    setUserName(null);
+    
+    await Swal.fire({
+      icon: 'success',
+      title: 'Logged Out',
+      text: 'You have been successfully logged out',
+      timer: 2000,
+      showConfirmButton: false
+    });
+    
+    navigate('/');
   };
 
   return (
