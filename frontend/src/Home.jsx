@@ -85,7 +85,7 @@ const Home = () => {
                         </p>
                         <div className="d-flex gap-2">
                             <Link to="/learn" className="btn btn-success px-4">Browse Video Library</Link>
-                            <a href="#" className="btn btn-outline-secondary px-4">Download Guides</a>
+                            <Link to="/learn" className="btn btn-outline-secondary px-4">Download Guides</Link>
                         </div>
                     </div>
                 </div>

@@ -1,7 +1,7 @@
 import { memo, useState } from 'react';
 import './css/Login.css';
 import axios from 'axios';
-import { useNavigate } from 'react-router-dom';
+import { useNavigate, Link } from 'react-router-dom';
 
 const FarmerLogin = () => {
     const navigate = useNavigate();
@@ -81,7 +81,7 @@ const FarmerLogin = () => {
                         </form>
                         <div className="text-center mt-3">
                             <span className="text-muted">Don't have an account? </span>
-                            <a href="/signup/farmer">Sign Up</a>
+                            <Link to="/signup/farmer">Sign Up</Link>
                         </div>
                     </div>
                 </div>
