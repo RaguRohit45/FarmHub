@@ -47,6 +47,30 @@ const Profile = () => {
             setOccupation(userData.occupation || '');
         } catch (error) {
             console.error('Error fetching profile:', error);
+            
+            // Check if authentication failed and logout is required
+            if (error.response?.data?.logoutRequired) {
+                // Clear local storage and redirect to login
+                localStorage.removeItem('token');
+                localStorage.removeItem('userName');
+                localStorage.removeItem('userEmail');
+                
+                // Show message to user
+                if (window.Swal) {
+                    Swal.fire({
+                        icon: 'warning',
+                        title: 'Session Expired',
+                        text: 'Your session has expired. Please login again.',
+                        confirmButtonText: 'Login Now'
+                    }).then(() => {
+                        navigate('/login');
+                    });
+                } else {
+                    navigate('/login');
+                }
+                return;
+            }
+            
             // If profile doesn't exist, just use stored data
             const storedEmail = localStorage.getItem("userEmail");
             if (storedEmail) {
@@ -79,6 +103,29 @@ const Profile = () => {
             window.dispatchEvent(new Event('auth-changed'));
             setIsEditing(false);
         } catch (error) {
+            // Check if authentication failed and logout is required
+            if (error.response?.data?.logoutRequired) {
+                // Clear local storage and redirect to login
+                localStorage.removeItem('token');
+                localStorage.removeItem('userName');
+                localStorage.removeItem('userEmail');
+                
+                // Show message to user
+                if (window.Swal) {
+                    Swal.fire({
+                        icon: 'warning',
+                        title: 'Session Expired',
+                        text: 'Your session has expired. Please login again.',
+                        confirmButtonText: 'Login Now'
+                    }).then(() => {
+                        navigate('/login');
+                    });
+                } else {
+                    navigate('/login');
+                }
+                return;
+            }
+            
             if (window.Swal) {
                 Swal.fire({
                     icon: 'error',
