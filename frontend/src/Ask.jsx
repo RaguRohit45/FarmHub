@@ -3,7 +3,7 @@ import NavbarHome from './NavbarHome';
 
 const Ask = () => {
   const API_BASE = useMemo(() => 'https://farmhub-tnfz.onrender.com/api', []);
-  const token = useMemo(() => localStorage.getItem('token'), []);
+  const token = useMemo(() => sessionStorage.getItem('token'), []);
 
   const [messages, setMessages] = useState([]);
   const [text, setText] = useState('');

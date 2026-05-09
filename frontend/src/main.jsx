@@ -12,8 +12,9 @@ if (typeof window !== 'undefined' && !window.__fetchPatched) {
     if (response && response.status === 401 && !isHandlingLogout) {
       try {
         isHandlingLogout = true;
-        localStorage.removeItem('token');
-        localStorage.removeItem('userName');
+        sessionStorage.removeItem('token');
+        sessionStorage.removeItem('userName');
+        sessionStorage.removeItem('userEmail');
         window.dispatchEvent(new Event('auth-changed'));
         if (window.Swal && typeof window.Swal.fire === 'function') {
           await window.Swal.fire({

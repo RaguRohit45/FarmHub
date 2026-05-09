@@ -17,8 +17,8 @@ const Profile = () => {
     const [loading, setLoading] = useState(false);
 
     useEffect(() => {
-        const storedToken = localStorage.getItem("token");
-        const storedUserName = localStorage.getItem("userName");
+        const storedToken = sessionStorage.getItem("token");
+        const storedUserName = sessionStorage.getItem("userName");
         
         if (!storedToken) {
             navigate('/login');
@@ -51,9 +51,9 @@ const Profile = () => {
             // Check if authentication failed and logout is required
             if (error.response?.data?.logoutRequired) {
                 // Clear local storage and redirect to login
-                localStorage.removeItem('token');
-                localStorage.removeItem('userName');
-                localStorage.removeItem('userEmail');
+                sessionStorage.removeItem('token');
+                sessionStorage.removeItem('userName');
+                sessionStorage.removeItem('userEmail');
                 
                 // Show message to user
                 if (window.Swal) {
@@ -72,7 +72,7 @@ const Profile = () => {
             }
             
             // If profile doesn't exist, just use stored data
-            const storedEmail = localStorage.getItem("userEmail");
+            const storedEmail = sessionStorage.getItem("userEmail");
             if (storedEmail) {
                 setEmail(storedEmail);
             }
@@ -99,16 +99,16 @@ const Profile = () => {
             }
             
             // Update localStorage
-            localStorage.setItem("userName", userName);
+            sessionStorage.setItem("userName", userName);
             window.dispatchEvent(new Event('auth-changed'));
             setIsEditing(false);
         } catch (error) {
             // Check if authentication failed and logout is required
             if (error.response?.data?.logoutRequired) {
                 // Clear local storage and redirect to login
-                localStorage.removeItem('token');
-                localStorage.removeItem('userName');
-                localStorage.removeItem('userEmail');
+                sessionStorage.removeItem('token');
+                sessionStorage.removeItem('userName');
+                sessionStorage.removeItem('userEmail');
                 
                 // Show message to user
                 if (window.Swal) {

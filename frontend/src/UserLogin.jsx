@@ -15,12 +15,12 @@ const UserLogin = () => {
             if (window.Swal) {
                 await Swal.fire({ icon: 'success', title: 'Logged in', text: 'User logged in successfully' });
             }
-            localStorage.setItem("token", res.data.token);
+            sessionStorage.setItem("token", res.data.token);
             if (res?.data?.user?.name) {
-                localStorage.setItem("userName", res.data.user.name);
+                sessionStorage.setItem("userName", res.data.user.name);
             }
             if (res?.data?.user?.email) {
-                localStorage.setItem("userEmail", res.data.user.email);
+                sessionStorage.setItem("userEmail", res.data.user.email);
             }
             window.dispatchEvent(new Event('auth-changed'));
             console.log('token saved');

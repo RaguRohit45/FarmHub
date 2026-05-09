@@ -11,7 +11,7 @@ const FarmerUploads = () => {
     const [replyText, setReplyText] = useState({});
 
     const API_BASE = useMemo(() => 'https://farmhub-tnfz.onrender.com/api', []);
-    const token = useMemo(() => localStorage.getItem('token'), []);
+    const token = useMemo(() => sessionStorage.getItem('token'), []);
 
     const handleChange = (e) => {
         const { name, value } = e.target;

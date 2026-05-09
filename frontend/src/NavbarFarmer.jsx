@@ -8,11 +8,11 @@ const NavbarFarmer = () => {
   const [userName, setUserName] = useState(null);
 
   useEffect(() => {
-    setToken(localStorage.getItem("token"));
-    setUserName(localStorage.getItem("userName"));
+    setToken(sessionStorage.getItem("token"));
+    setUserName(sessionStorage.getItem("userName"));
     const onStorage = () => {
-      setToken(localStorage.getItem("token"));
-      setUserName(localStorage.getItem("userName"));
+      setToken(sessionStorage.getItem("token"));
+      setUserName(sessionStorage.getItem("userName"));
     };
     window.addEventListener("storage", onStorage);
     window.addEventListener("auth-changed", onStorage);
@@ -32,8 +32,9 @@ const NavbarFarmer = () => {
       cancelButtonText: 'Cancel'
     });
     if (!result.isConfirmed) return;
-    localStorage.removeItem("token");
-    localStorage.removeItem("userName");
+    sessionStorage.removeItem("token");
+    sessionStorage.removeItem("userName");
+    sessionStorage.removeItem("userEmail");
     setToken(null);
     setUserName(null);
     window.dispatchEvent(new Event("auth-changed"));

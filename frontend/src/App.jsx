@@ -16,7 +16,7 @@ import AskFarmer from "./AskFarmer";
 import Profile from "./Profile";
 
 const RequireAuth = ({ children }) => {
-  const token = localStorage.getItem("token");
+  const token = sessionStorage.getItem("token");
   if (!token) {
     return <Navigate to="/login" replace state={{ msg: "Login required to access this page" }} />;
   }

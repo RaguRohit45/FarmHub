@@ -16,9 +16,9 @@ const FarmerLogin = () => {
             if (window.Swal) {
                 await Swal.fire({ icon: 'success', title: 'Logged in', text: 'Farmer logged in successfully' });
             }
-            localStorage.setItem("token", res.data.token);
+            sessionStorage.setItem("token", res.data.token);
             if (res?.data?.farmer?.fname) {
-                localStorage.setItem("userName", res.data.farmer.fname);
+                sessionStorage.setItem("userName", res.data.farmer.fname);
             }
             window.dispatchEvent(new Event('auth-changed'));
             console.log(res.data.token);
